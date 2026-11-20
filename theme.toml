@@ -1,0 +1,129 @@
+# Tema "lofi" escuro, inspirado no tema padrão do opencode.
+# Fundo quase preto, quase tudo em cinza, e o pêssego do opencode só onde importa.
+#
+#   fundo   #0a0a0a   painel   #141414   elemento #1e1e1e   linha  #282828
+#   borda   #3c3c3c   apagado  #606060   suave    #808080   texto  #c8c8c8   forte #eeeeee
+#   pêssego #fab283   azul     #5c9cf5   roxo     #9d7cd8
+#   verde   #7fd88f   ciano    #56b6c2   amarelo  #e5c07b   vermelho #e06c75
+
+[app]
+overall = { fg = "#c8c8c8", bg = "#0a0a0a" }
+
+[mgr]
+cwd = { fg = "#fab283", bold = true }
+
+find_keyword  = { fg = "#fab283", bold = true, underline = true }
+find_position = { fg = "#9d7cd8", bold = true, italic = true }
+
+symlink_target = { fg = "#606060", italic = true }
+
+marker_copied   = { fg = "#7fd88f", bg = "#7fd88f" }
+marker_cut      = { fg = "#e06c75", bg = "#e06c75" }
+marker_marked   = { fg = "#56b6c2", bg = "#56b6c2" }
+marker_selected = { fg = "#fab283", bg = "#fab283" }
+
+count_copied   = { fg = "#0a0a0a", bg = "#7fd88f" }
+count_cut      = { fg = "#0a0a0a", bg = "#e06c75" }
+count_selected = { fg = "#0a0a0a", bg = "#fab283" }
+
+border_symbol = "│"
+border_style  = { fg = "#282828" }
+
+[tabs]
+active   = { fg = "#0a0a0a", bg = "#fab283", bold = true }
+inactive = { fg = "#808080", bg = "#1e1e1e" }
+
+[mode]
+normal_main = { fg = "#0a0a0a", bg = "#fab283", bold = true }
+normal_alt  = { fg = "#fab283", bg = "#1e1e1e" }
+select_main = { fg = "#0a0a0a", bg = "#9d7cd8", bold = true }
+select_alt  = { fg = "#9d7cd8", bg = "#1e1e1e" }
+unset_main  = { fg = "#0a0a0a", bg = "#e06c75", bold = true }
+unset_alt   = { fg = "#e06c75", bg = "#1e1e1e" }
+
+[indicator]
+parent  = { fg = "#eeeeee", bg = "#1e1e1e" }
+current = { fg = "#eeeeee", bg = "#282828", bold = true }
+preview = { fg = "#eeeeee", bg = "#1e1e1e" }
+
+[status]
+overall    = { fg = "#808080", bg = "#141414" }
+perm_sep   = { fg = "#3c3c3c" }
+perm_type  = { fg = "#5c9cf5" }
+perm_read  = { fg = "#e5c07b" }
+perm_write = { fg = "#e06c75" }
+perm_exec  = { fg = "#7fd88f" }
+progress_label  = { fg = "#eeeeee", bold = true }
+progress_normal = { fg = "#fab283", bg = "#1e1e1e" }
+progress_error  = { fg = "#e06c75", bg = "#1e1e1e" }
+
+[which]
+cols            = 3
+mask            = { bg = "#141414" }
+border          = { fg = "#3c3c3c" }
+cand            = { fg = "#fab283", bold = true }
+rest            = { fg = "#606060" }
+desc            = { fg = "#a0a0a0" }
+separator_style = { fg = "#3c3c3c" }
+
+[confirm]
+border  = { fg = "#3c3c3c" }
+title   = { fg = "#fab283", bold = true }
+btn_yes = { fg = "#0a0a0a", bg = "#fab283", bold = true }
+btn_no  = { fg = "#808080" }
+
+[spot]
+border   = { fg = "#3c3c3c" }
+title    = { fg = "#fab283" }
+tbl_col  = { fg = "#808080" }
+tbl_cell = { fg = "#eeeeee", bg = "#282828" }
+
+[notify]
+title_info  = { fg = "#7fd88f" }
+title_warn  = { fg = "#e5c07b" }
+title_error = { fg = "#e06c75" }
+
+[pick]
+border   = { fg = "#3c3c3c" }
+active   = { fg = "#fab283", bg = "#1e1e1e", bold = true }
+inactive = { fg = "#a0a0a0" }
+
+[input]
+border   = { fg = "#3c3c3c" }
+title    = { fg = "#fab283" }
+value    = { fg = "#eeeeee" }
+selected = { bg = "#323232" }
+
+[cmp]
+border   = { fg = "#3c3c3c" }
+active   = { fg = "#eeeeee", bg = "#282828", bold = true }
+inactive = { fg = "#808080" }
+
+[tasks]
+border  = { fg = "#3c3c3c" }
+title   = { fg = "#fab283" }
+hovered = { fg = "#fab283", bold = true }
+
+[help]
+border  = { fg = "#3c3c3c" }
+chord   = { fg = "#fab283" }
+action  = { fg = "#808080" }
+hovered = { bg = "#282828", bold = true }
+
+[filetype]
+rules = [
+	# Imagem, mídia, compactado, documento
+	{ mime = "**/image/*", fg = "#e5c07b" },
+	{ mime = "**/{audio,video}/*", fg = "#9d7cd8" },
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#e06c75" },
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "#56b6c2" },
+	{ mime = "vfs/{absent,stale}", fg = "#606060" },
+	# Especiais
+	{ url = "*", is = "orphan", fg = "#e06c75", italic = true },
+	{ url = "*", is = "exec", fg = "#7fd88f" },
+	{ url = "*", is = "dummy", fg = "#e06c75", italic = true },
+	{ url = "*/", is = "dummy", fg = "#e06c75", italic = true },
+	# Pastas em azul suave, o resto no cinza do texto
+	{ url = "*/", fg = "#5c9cf5" },
+	{ url = "*", fg = "#c8c8c8" },
+]

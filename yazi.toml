@@ -1,0 +1,18 @@
+# Configuração do yazi (o resto segue o padrão da versão instalada)
+
+[opener]
+lvim-aba = [
+	{ run = '~/.config/yazi/abrir-kitty.sh aba %s', desc = "lvim-react em nova aba do kitty", block = true, for = "unix" },
+]
+lvim-split = [
+	{ run = '~/.config/yazi/abrir-kitty.sh split %s', desc = "lvim-react em split ao lado", block = true, for = "unix" },
+]
+lvim-aqui = [
+	{ run = 'NVIM_APPNAME=lvim-react /snap/bin/nvim %s', desc = "lvim-react aqui mesmo", block = true, for = "unix" },
+]
+
+[open]
+# Enter abre XML em nova aba; O (ou Shift+Enter) mostra as outras opções
+prepend_rules = [
+	{ url = "*.{xml,XML,xsd,xsl,xslt,wsdl,pom}", use = [ "lvim-aba", "lvim-split", "lvim-aqui", "edit", "reveal" ] },
+]

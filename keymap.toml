@@ -1,0 +1,10 @@
+# Atalhos próprios (somados aos padrões do yazi)
+
+[mgr]
+prepend_keymap = [
+	{ on = "<F2>",      run = "plugin atalhos",                                        desc = "Mostrar/esconder a barra de atalhos" },
+	{ on = "<F3>",      run = "plugin externos",                                       desc = "Arquivos fora do ~/.config/yazi" },
+	{ on = [ "e", "t" ], run = "shell --block -- ~/.config/yazi/abrir-kitty.sh aba %s",   desc = "lvim-react em nova aba do kitty" },
+	{ on = [ "e", "s" ], run = "shell --block -- ~/.config/yazi/abrir-kitty.sh split %s", desc = "lvim-react em split ao lado" },
+	{ on = [ "e", "e" ], run = "shell --block -- NVIM_APPNAME=lvim-react /snap/bin/nvim %s", desc = "lvim-react aqui mesmo" },
+]
